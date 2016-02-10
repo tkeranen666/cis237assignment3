@@ -1,5 +1,5 @@
 # Assignment 3 - Inheritance, Abstract Classes, Interfaces, and Polymorphism
-## Due: 10-20-2015
+## Due: 03-02-2016
 
 ## Author
 
@@ -9,13 +9,13 @@
 
 The Jawas on Tatooine have recently opened a droid factory and they want to hire you to write a program to hold a list of the available droids, and the price of each droid. The price is based on the type: (protocol, utility, janitor, or astromech), the material used and the options selected by the Jawa creating the list.
 
-The program will keep a list of Droids that are created. This list can be either an array or in the form of one of the C# List classes. The array or list should be of a type that is high enough on the inheritance chain that all droids no matter what type they are can be stored in it. (Think Polymorphism)
+The program will keep a list of Droids that are created. This list must be an Array. The array or list should be of a type that is high enough on the inheritance chain that all droids no matter what type they are can be stored in it (Think Polymorphism). Just make the size of the array large enough that it can accomodate some droids. 100 is a good number that comes to mind. I'm not concerned with it being auto-resizing.
 
 A Jawa will be presented with a user interface to add a new Droid, or print the current Droid list. Adding a new Driod will require input from the Jawa to create the new droid. Once all of the needed information is added for the droid, the new droid will be added to the list.
 
 If a Jawa decides to print the list of droids in inventory, the program should loop through all of the droids in the list and print out the information from ToString, and the TotalCost for each droid. This should be accomplished using Polymorphism to reduce the amount of code needed.
 
-All of the prices for the various aspects of a droid are left up to you to determine. If I was doing it though, I would proabably have a small set price for each of the following general options, and not get too specific to save time. ie, a price for: model(protocol, utility, etc.), material(Something Made up), option(One of the various option bools listed below. One price for all will work), numberOfLanguages, and numberOfShips, and that's it.
+All of the prices for the various aspects of a droid are left up to you to determine. If I was doing it though, I would proabably have a small set price for each of the following general options, and not get too specific to save time. ie, a price for: model(protocol, utility, etc.), material(Something Made up), option(One of the various option bools listed below. One price for all will work), numberOfLanguages, and numberOfShips.
 
 The program comes with an Interface IDroid that must be implemented by subclasses. It contains a public method called CalculateTotalCost, and a public Property called TotalCost that will get the total cost for a droid.
 
@@ -70,7 +70,7 @@ Astromech:
 
 You should put all of your UI into a UI class that will handle getting all of the necessary information from the Jawa, and display the feedback to the Jawa.
 
-You should create a class for the collection of the Droids. It should have an add method that will do the work of determining which instance of a droid needs to be created and added to the array. The UI class will prompt for the needed information to add a droid, and then when it has all of the info, it will send it to the add method, which will then determine which type to add based on the 'model' that was entered. The add method might be a good place to do method overloading, though not required.
+You should create a class for the collection of the Droids. The DroidCollection class should contain the array that holds the droids, and maintain any internal information needed to manage that array. It should have an add method that will do the work of determining which instance of a droid needs to be created and added to the array. The UI class will prompt for the needed information to add a droid, and then when it has all of the info, it will send it to the add method, which will then determine which type to add based on the 'model' that was entered. The add method might be a good place to do method overloading, though not required.
 
 You should follow the concepts about inheritance talked about in class, and work hard at DRY (Don't Repeat Yourself) Principles.
 
