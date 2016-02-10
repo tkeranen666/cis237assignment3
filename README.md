@@ -9,7 +9,7 @@
 
 The Jawas on Tatooine have recently opened a droid factory and they want to hire you to write a program to hold a list of the available droids, and the price of each droid. The price is based on the type: (protocol, utility, janitor, or astromech), the material used and the options selected by the Jawa creating the list.
 
-The program will keep a list of Droids that are created. This list must be an Array. The array or list should be of a type that is high enough on the inheritance chain that all droids no matter what type they are can be stored in it (Think Polymorphism). Just make the size of the array large enough that it can accomodate some droids. 100 is a good number that comes to mind. I'm not concerned with it being auto-resizing.
+The program will keep a list of Droids that are created. This list MUST be an Array. The array should be of a type that is high enough on the inheritance chain that all droids no matter what type they are can be stored in it (Think Polymorphism). Just make the size of the array large enough that it can accomodate some droids. 100 is a good number that comes to mind. I'm not concerned with it being auto-resizing, or anything fancy.
 
 A Jawa will be presented with a user interface to add a new Droid, or print the current Droid list. Adding a new Driod will require input from the Jawa to create the new droid. Once all of the needed information is added for the droid, the new droid will be added to the list.
 
