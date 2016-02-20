@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Program
+    class Droid
     {
-        static void Main(string[] args)
-        {
-            string[] driodList = new string[100];
-        }
     }
 }
