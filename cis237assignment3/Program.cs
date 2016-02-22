@@ -10,7 +10,8 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
-            string[] driodList = new string[100];
+            //string[] driodList = new string[100];
+            IDroid[] droidList = new Droid[100];
         }
     }
 }

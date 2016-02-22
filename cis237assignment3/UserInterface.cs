@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    interface IDroid
+    class UserInterface
     {
-        decimal CalculateTotalCost();
 
-        decimal TotalCost { get; set; }
     }
 }

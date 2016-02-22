@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    abstract class Droid
+    abstract class Droid : IDroid
     {
         protected string material;
         protected string model;
@@ -30,9 +30,36 @@ namespace cis237assignment3
             set { color = value; }
         }
 
+        public decimal BaseCost
+        {
+            get { return baseCost; }
+            set { baseCost = value;}
+        }
+
+        public decimal TotalCost
+        {
+            get { return totalCost; }
+            set { totalCost = value; }
+        }
+
         public Droid()
         {
         }
+
+        public Droid(string material, string model, string color)
+        {
+            this.material = material;
+            this.model = model;
+            this.color = color;
+        }
+
+        public string InfoList()
+        {
+            return this.material + ", " + this.model + ", " + this.color + ", cost of droid: " + 
+                   this.baseCost.ToString("N") + ", total cost of purchase: " + this.totalCost.ToString("N");
+        }
+
+        public abstract decimal CalculateTotalCost();
 
         public override string ToString()
         {
