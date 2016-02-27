@@ -11,8 +11,8 @@ namespace cis237assignment3
         protected string material;
         protected string model;
         protected string color;
-        protected decimal baseCost;
-        protected decimal totalCost;
+        //protected decimal baseCost;
+        //protected decimal totalCost;
 
         public string Material
         {
@@ -30,17 +30,17 @@ namespace cis237assignment3
             set { color = value; }
         }
 
-        public decimal BaseCost
-        {
-            get { return baseCost; }
-            set { baseCost = value;}
-        }
+        //public decimal BaseCost
+        //{
+        //    get { return baseCost; }
+        //    set { baseCost = value;}
+        //}
 
-        public decimal TotalCost
-        {
-            get { return totalCost; }
-            set { totalCost = value; }
-        }
+        //public decimal TotalCost
+        //{
+        //    get { return totalCost; }
+        //    set { totalCost = value; }
+        //}
 
         public Droid()
         {
@@ -55,8 +55,8 @@ namespace cis237assignment3
 
         public string InfoList()
         {
-            return this.material + ", " + this.model + ", " + this.color + ", cost of droid: " + 
-                   this.baseCost.ToString("N") + ", total cost of purchase: " + this.totalCost.ToString("N");
+            return this.material + ", " + this.model + ", " + this.color; // + ", cost of droid: " + 
+                  // this.baseCost.ToString("N") + ", total cost of purchase: " + this.totalCost.ToString("N");
         }
 
         public abstract decimal CalculateTotalCost();

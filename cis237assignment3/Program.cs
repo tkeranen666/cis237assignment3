@@ -12,6 +12,8 @@ namespace cis237assignment3
         {
             //string[] driodList = new string[100];
             IDroid[] droidList = new Droid[100];
+
+            UserInterface UI = new UserInterface();
         }
     }
 }

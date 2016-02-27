@@ -10,6 +10,7 @@ namespace cis237assignment3
     {
         bool trashCompactor;
         bool vacuum;
+        const decimal baseCost = 175.00m;
 
 
         public override string ToString()
@@ -26,7 +27,7 @@ namespace cis237assignment3
 
         public override decimal CalculateTotalCost()
         {
-            return 1.00m;
+            return baseCost;
         }
     }
 }

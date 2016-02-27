@@ -10,6 +10,7 @@ namespace cis237assignment3
     {
         int numberLanguages;
         const decimal costPerLanguage = 30.00m;
+        const decimal baseCost = 280.00m;
 
 
         public override string ToString()
@@ -26,7 +27,7 @@ namespace cis237assignment3
         //public abstract decimal CalculateTotalCost();
         public override decimal CalculateTotalCost()
         {
-            return 1.00m; //costPerLanguage * Droid(baseCost);
+            return baseCost + costPerLanguage * numberLanguages;
         }
     }
 }
