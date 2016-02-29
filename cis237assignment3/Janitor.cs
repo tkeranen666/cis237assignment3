@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Janitor : Utility
+    public class Janitor : Utility
     {
         bool trashCompactor;
         bool vacuum;
@@ -25,9 +25,18 @@ namespace cis237assignment3
             this.vacuum = vacuum;
         }
 
-        public override decimal CalculateTotalCost()
+        public decimal CalculateCost()
         {
-            return baseCost;
+
+
+
+
+            return 1.00m;
         }
+
+        //public override decimal CalculateTotalCost()
+        //{
+        //    return baseCost;
+        //}
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Protocol : Droid
+    public class Protocol : Droid
     {
         int numberLanguages;
         const decimal costPerLanguage = 30.00m;

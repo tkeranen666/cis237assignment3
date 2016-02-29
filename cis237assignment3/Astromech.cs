@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Astromech : Utility
+    public class Astromech : Utility
     {
         bool fireExtinguisher;
         int numberShips;
@@ -26,9 +26,17 @@ namespace cis237assignment3
             this.numberShips = numberShips;
         }
 
-        public override decimal CalculateTotalCost()
+        public decimal CalculateCost()
         {
-            return baseCost + costPerShips * numberShips;
+
+
+
+
+            return 1.00m;
         }
+        //public override decimal CalculateTotalCost()
+        //{
+        //    return baseCost + costPerShips * numberShips;
+        //}
     }
 }

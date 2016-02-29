@@ -10,6 +10,10 @@ namespace cis237assignment3
     {
         decimal CalculateTotalCost();
 
-        decimal TotalCost { get; set; }
+        //decimal TotalCost 
+        //{ 
+        //    get; 
+        //    set;
+        //}
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    class Utility : Droid
+    public class Utility : Droid
     {
         bool toolBox;
         bool computerConnection;
@@ -26,7 +26,10 @@ namespace cis237assignment3
             this.arm = arm;
         }
 
-        public abstract decimal CalculateTotalCost();
+        public override decimal CalculateTotalCost()
+        {
+            return 1.00m;
+        }
         //public decimal CalculateTotalCost()
         //{
         //    return 1.00m;
