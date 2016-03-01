@@ -12,11 +12,7 @@ namespace cis237assignment3
         bool computerConnection;
         bool arm;
 
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        protected decimal extraCost = 0;
 
         public Utility(string material, string model, string color, bool toolBox, bool computerConnection, bool arm)
             : base(material, model, color)
@@ -28,11 +24,26 @@ namespace cis237assignment3
 
         public override decimal CalculateTotalCost()
         {
-            return 1.00m;
+            if (toolBox == true)
+            {
+                extraCost += 60.00m;
+            }
+            if (computerConnection == true)
+            {
+                extraCost += 30.00m;
+            }
+            if (arm == true)
+            {
+                extraCost += 50.00m;
+            }
+
+            //totalCost = baseCost + extraCost;
+            return baseCost + extraCost;
         }
-        //public decimal CalculateTotalCost()
-        //{
-        //    return 1.00m;
-        //}
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

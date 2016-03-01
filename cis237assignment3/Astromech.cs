@@ -9,15 +9,8 @@ namespace cis237assignment3
     public class Astromech : Utility
     {
         bool fireExtinguisher;
-        int numberShips;
-        const decimal costPerShips = 50.00m;
-        const decimal baseCost = 320.00m;
-
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        protected int numberShips;
+        protected const decimal costPerShips = 50.00m;
 
         public Astromech(string material, string model, string color, bool toolBox, bool computerConnection, bool arm, bool fireExtinguisher, int numberShips)
             : base(material, model, color, toolBox, computerConnection, arm)
@@ -26,17 +19,20 @@ namespace cis237assignment3
             this.numberShips = numberShips;
         }
 
-        public decimal CalculateCost()
+        public override decimal CalculateTotalCost()
         {
+            if (fireExtinguisher == true)
+            {
+                extraCost += 30;
+            }
 
-
-
-
-            return 1.00m;
+            //totalCost = baseCost + extraCost + costPerShips * numberShips;
+            return baseCost + extraCost + costPerShips * numberShips;
         }
-        //public override decimal CalculateTotalCost()
-        //{
-        //    return baseCost + costPerShips * numberShips;
-        //}
+
+        public override string ToString()
+        {
+            return "Ships Can Pilot: " + numberShips.ToString() + Environment.NewLine + base.ToString();
+        }
     }
 }

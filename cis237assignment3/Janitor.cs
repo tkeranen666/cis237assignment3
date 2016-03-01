@@ -10,13 +10,6 @@ namespace cis237assignment3
     {
         bool trashCompactor;
         bool vacuum;
-        const decimal baseCost = 175.00m;
-
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
 
         public Janitor(string material, string model, string color, bool toolBox, bool computerConnection, bool arm, bool trashCompactor, bool vacuum)
             : base(material, model, color, toolBox, computerConnection, arm)
@@ -25,18 +18,24 @@ namespace cis237assignment3
             this.vacuum = vacuum;
         }
 
-        public decimal CalculateCost()
+        public override decimal CalculateTotalCost()
         {
+            if (trashCompactor == true)
+            {
+                extraCost += 100.00m;
+            }
+            if (vacuum == true)
+            {
+                extraCost += 20.00m;
+            }
 
-
-
-
-            return 1.00m;
+           // totalCost = baseCost + extraCost;
+            return baseCost + extraCost;
         }
 
-        //public override decimal CalculateTotalCost()
-        //{
-        //    return baseCost;
-        //}
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }

@@ -10,34 +10,32 @@ namespace cis237assignment3
     {
         static void Main(string[] args)
         {
-            //string[] driodList = new string[100];
-            //IDroid[] droidList = new Droid[100];
-
             UserInterface UI = new UserInterface();
 
             int userInput = UI.ProcessDroidList();
 
-            DroidCollection DC = new DroidCollection();
-            DC.AddInitialDroids();
+            DroidCollection collection = new DroidCollection();
+            collection.AddInitialDroids();
 
             while (userInput != 3)
             {
-                if (userInput == 1)
+                if (userInput == 1) // If user selects 1, program prints list
                 {
-                    DC.PrintList();
+                    collection.PrintList();
                     Console.WriteLine();
                     Console.WriteLine();
                     userInput = UI.ProcessDroidList();
                 }
 
-                else if (userInput == 2)
+                else if (userInput == 2) // If user selects 2, program adds a droid to the list (Not ready)
                 {
+                    collection.AddDroid();
                     Console.WriteLine();
                     Console.WriteLine();
                     userInput = UI.ProcessDroidList();
                 }
 
-                else if (userInput == 3)
+                else if (userInput == 3) // If user selects 3, exit program
                 {
                     Console.WriteLine("Logging off....");
                 }

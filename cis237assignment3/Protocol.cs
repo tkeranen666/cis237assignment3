@@ -9,14 +9,7 @@ namespace cis237assignment3
     public class Protocol : Droid
     {
         int numberLanguages;
-        const decimal costPerLanguage = 30.00m;
-        const decimal baseCost = 280.00m;
-
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        const decimal costPerLanguage = 0.10m;
 
         public Protocol(string material, string model, string color, int numberLanguages) :
                base(material, model, color)
@@ -24,10 +17,15 @@ namespace cis237assignment3
             this.numberLanguages = numberLanguages;
         }
 
-        //public abstract decimal CalculateTotalCost();
         public override decimal CalculateTotalCost()
         {
-            return baseCost + costPerLanguage * numberLanguages;
+            //totalCost = baseCost + costPerLanguage * numberLanguages;
+            return baseCost + costPerLanguage * numberLanguages; ;
+        }
+
+        public override string ToString()
+        {
+            return "Languages: " + numberLanguages.ToString() + Environment.NewLine + base.ToString();
         }
     }
 }

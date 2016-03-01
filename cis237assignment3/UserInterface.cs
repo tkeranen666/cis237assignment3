@@ -12,7 +12,6 @@ namespace cis237assignment3
         {
             this.PrintMenu();
 
-            //int userInput = Convert.ToInt32(Console.ReadLine());
             string userInput = Console.ReadLine();
 
             if (userInput != "1" && userInput != "2" && userInput != "3")
@@ -24,9 +23,10 @@ namespace cis237assignment3
             return Convert.ToInt32(userInput);
         }
 
-        public string AddDroid()
+        public void AddDroid()
         {
-            return "";
+
+            
         }
 
         private void PrintMenu()
