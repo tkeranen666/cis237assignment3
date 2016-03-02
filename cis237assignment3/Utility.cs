@@ -4,46 +4,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment3
 {
-    public class Utility : Droid
-    {
-        bool toolBox;
-        bool computerConnection;
-        bool arm;
+    public class Utility : Droid // The Utility inherits values from Droid, and class handles the values
+    {                           // shared by Astromech and Janitor.
+        protected bool toolBox;
+        protected bool computerConnection;
+        protected bool arm;
 
-        protected decimal extraCost = 0;
+        protected string[] options = new string[6]; // This array sets string values for the boolean choices
+                                                   // displayed in the ToString() method. It is protected to
+                                                  //  allow it to be inherited. 
+        public Utility() // Default constructor.
+        {
+        }
 
         public Utility(string material, string model, string color, bool toolBox, bool computerConnection, bool arm)
-            : base(material, model, color)
+            : base(material, model, color) // Six parameter constructor using passed-in fields from the Droid class
         {
+            options[0] = "No";
+            options[1] = "No"; // The options string array values are set to "No" (false) by default unless their boolean
+            options[2] = "No"; // counterparts are set to true.
+            options[3] = "No";
+            options[4] = "No";
+            options[5] = "No";
+            //totalCost = this.CalculateTotalCost();
+
             this.toolBox = toolBox;
             this.computerConnection = computerConnection;
             this.arm = arm;
         }
 
-        public override decimal CalculateTotalCost()
-        {
-            if (toolBox == true)
-            {
-                extraCost += 60.00m;
-            }
-            if (computerConnection == true)
-            {
-                extraCost += 30.00m;
-            }
-            if (arm == true)
-            {
-                extraCost += 50.00m;
-            }
+        public override decimal CalculateTotalCost() // For some reason, I could not get the program to call
+        {                                           // this method for the life of me. Is it because the
+            //if (toolBox == true)                 //  derived classes are overriding it?
+            //{
+            //    extraCost += 60.00m;
+            //    options[0] = "Yes";
+            //}
+            //if (computerConnection == true)
+            //{
+            //    extraCost += 30.00m;
+            //    options[1] = "Yes";
+            //}
+            //if (arm == true)
+            //{
+            //    extraCost += 50.00m;
+            //    options[2] = "Yes";
+            //}
 
-            //totalCost = baseCost + extraCost;
-            return baseCost + extraCost;
+            return baseCost + extraCost + modelCost;
         }
 
-        public override string ToString()
+        public override string ToString() // The program adds the new values to the overridden method string.
         {
-            return base.ToString();
+            return "Has Toolbox            " + options[0] + Environment.NewLine + 
+                   "Connect to Computer    " + options[1] + Environment.NewLine +
+                   "Has Arm                " + options[2] + Environment.NewLine + base.ToString();
         }
     }
 }

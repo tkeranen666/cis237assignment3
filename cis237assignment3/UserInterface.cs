@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment3
 {
-    class UserInterface
+    class UserInterface // The UserInterface class handles user input and passes it to other classes.
     {
-        string userInput;
+        private string userInput; // This string holds the majority of the input given by the user.
 
         public int ProcessDroidList()
         {
@@ -24,9 +26,8 @@ namespace cis237assignment3
             return Convert.ToInt32(userInput);
         }
 
-        public string AddDroid()     //string droidType, string model, string material, string color, int languages, bool toolBox, bool connect, 
-        {                           //bool arm, bool extingusher, int ships, bool compactor, bool vacuum)
-            //string choice;
+        public string AddDroid()    
+        {                      
             Console.WriteLine();
             Console.WriteLine("What is the droid's fuction?" + Environment.NewLine +
                               "1 - Protocal" + Environment.NewLine +
@@ -57,7 +58,6 @@ namespace cis237assignment3
 
         public string AddMaterial()
         {
-            //int choice;
             Console.WriteLine();
             Console.WriteLine("What material is the droid made of?" + Environment.NewLine +
                               "1 - Carbon-steel Alloy" + Environment.NewLine +
@@ -128,7 +128,6 @@ namespace cis237assignment3
 
         public bool AddOptions()
         {
-            Console.WriteLine();
             Console.WriteLine("1 - Yes" + Environment.NewLine + "2 - No");
             userInput = Console.ReadLine();
 
@@ -149,27 +148,6 @@ namespace cis237assignment3
             return false;
         }
 
-        //public bool AddToolBox()
-        //{
-        //    Console.WriteLine("Does the droid have a toolbox?");
-        //    return false;
-        //}
-
-        //public bool AddComputerConnect()
-        //{
-        //    return false;
-        //}
-
-        //public bool AddArm()
-        //{
-        //    return false;
-        //}
-
-        //public bool AddFireExtinguisher()
-        //{
-        //    return false;
-        //}
-
         public int AddShips()
         {
             Console.WriteLine();
@@ -189,16 +167,6 @@ namespace cis237assignment3
 
             return Convert.ToInt32(userInput);
         }
-
-        //public bool AddTrashCompactor()
-        //{
-        //    return false;
-        //}
-
-        //public bool AddVacuum()
-        //{
-        //    return false;
-        //}
 
         private void PrintMenu()
         {

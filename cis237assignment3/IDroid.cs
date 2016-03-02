@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment3
 {
-    interface IDroid
+    interface IDroid // The IDroid interface
     {
         decimal CalculateTotalCost();
 

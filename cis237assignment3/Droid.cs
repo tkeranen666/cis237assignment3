@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment3
 {
     public abstract class Droid : IDroid
@@ -14,6 +16,10 @@ namespace cis237assignment3
 
         protected decimal baseCost;
         protected decimal totalCost;
+
+        protected decimal extraCost = 0;
+
+        protected decimal modelCost = 0;
 
         private const decimal COST_1 = 3000.00m;
         private const decimal COST_2 = 2500.00m;
@@ -51,34 +57,32 @@ namespace cis237assignment3
         {
         }
 
-        public Droid(string material, string model, string color/*, decimal baseCost*/)
+        public Droid(string material, string model, string color)
         {
             this.material = material;
             this.model = model;
             this.color = color;
-            //this.baseCost = baseCost;
+
+            modelCost = this.CalculateModelCost();
 
             baseCost = this.CalculateBaseCost();
-            //totalCost = this.CalculateTotalCost();
-        }
-
-        public string InfoList()
-        {
-            return this.material + ", " + this.model + ", " + this.color; // + ", cost of droid: " + 
-                  // this.baseCost.ToString("N") + ", total cost of purchase: " + this.totalCost.ToString("N");
         }
 
         public override string ToString()
         {
-            return "Material:         " + this.material + Environment.NewLine +
-                   "Model:            " + this.model + Environment.NewLine +
-                   "Color:            " + this.color + Environment.NewLine +
-                   "Material Cost:    " + this.baseCost.ToString() + " Credits" + 
+            return "Material               " + this.material + Environment.NewLine +
+                   "Model                  " + this.model + Environment.NewLine +
+                   "Color                  " + this.color + Environment.NewLine +
+                   "Material Cost          " + this.baseCost.ToString() + " Credits" + 
                    Environment.NewLine +
-                   "Total Cost:       " + this.totalCost.ToString() + " Credits";
+                   "Model Cost             " + modelCost.ToString() + " Credits" + 
+                   Environment.NewLine +
+                   "Extra Costs            " + extraCost + " Credits" + 
+                   Environment.NewLine +
+                   "Total Cost             " + this.totalCost.ToString() + " Credits";
         }
 
-        public decimal CalculateBaseCost()
+        private decimal CalculateBaseCost()
         {
             if (material == "Carbon-steel Alloy")
             {
@@ -98,9 +102,35 @@ namespace cis237assignment3
             }
         }
 
+        private decimal CalculateModelCost()
+        {
+            if (model == "HK Unit")
+            {
+                return 1000.00m;
+            }
+            else if (model == "R2 Unit")
+            {
+                return 500.00m;
+            }
+            else if (model == "T3 Unit")
+            {
+                return 450.00m;
+            }
+            else if (model == "V33 Unit")
+            {
+                return 250.00m;
+            }
+            else if (model == "Custom-built Unit" || model == "Custom-built" || model == "Custom Unit" ||
+                     model == "Custom-made" || model == "Custom Built" || model == "Custom")
+            {
+                return 200.00m;
+            }
+            else
+            {
+                return 100.00m;
+            }
+        }
+
         public abstract decimal CalculateTotalCost();
-        //{
-        //    return totalCost;
-        //}
     }
 }

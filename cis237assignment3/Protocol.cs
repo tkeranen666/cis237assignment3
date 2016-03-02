@@ -4,28 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Tim Keranen
+
 namespace cis237assignment3
 {
     public class Protocol : Droid
     {
-        int numberLanguages;
-        const decimal costPerLanguage = 0.01m;
+        private int numberLanguages; // These variables are set to private because they do not need
+        private const decimal costPerLanguage = 0.01m; // to be inherited by other classes.
+
+        public Protocol() // Default constructor.
+        {
+        }
 
         public Protocol(string material, string model, string color, int numberLanguages) :
-               base(material, model, color)
-        {
+               base(material, model, color) // 4-parameter constructor using values passed in by the 
+        {                                  // Droid class.
             this.numberLanguages = numberLanguages;
         }
 
         public override decimal CalculateTotalCost()
         {
-            return baseCost + costPerLanguage * numberLanguages;
+            extraCost = costPerLanguage * numberLanguages;
+            return baseCost + costPerLanguage * numberLanguages + modelCost;
         }
 
         public override string ToString()
         {
             totalCost = this.CalculateTotalCost();
-            return "Languages:        " + numberLanguages.ToString() + Environment.NewLine + base.ToString();
+            return "PROTOCAL" + Environment.NewLine + 
+                   "***************************************" + Environment.NewLine +
+                   "Languages              " + numberLanguages.ToString() + 
+                   Environment.NewLine + base.ToString();
         }
     }
 }
