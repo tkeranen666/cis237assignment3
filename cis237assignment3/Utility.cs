@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    public class Utility : Droid // The Utility inherits values from Droid, and class handles the values
+    public class Utility : Droid // The Utility derives from Droid, and handles the values
     {                           // shared by Astromech and Janitor.
         protected bool toolBox;
         protected bool computerConnection;
@@ -30,16 +30,15 @@ namespace cis237assignment3
             options[3] = "No";
             options[4] = "No";
             options[5] = "No";
-            //totalCost = this.CalculateTotalCost();
 
             this.toolBox = toolBox;
             this.computerConnection = computerConnection;
             this.arm = arm;
         }
 
-        public override decimal CalculateTotalCost() // For some reason, I could not get the program to call
-        {                                           // this method for the life of me. Is it because the
-            //if (toolBox == true)                 //  derived classes are overriding it?
+        public override decimal CalculateTotalCost() // For some reason, I could not get this method to work for the life
+        {                                           // of me, so I moved to calculations to Utilities derived classes.
+            //if (toolBox == true)                 //  Is it because the derived classes are overriding it?
             //{
             //    extraCost += 60.00m;
             //    options[0] = "Yes";
@@ -58,11 +57,12 @@ namespace cis237assignment3
             return baseCost + extraCost + modelCost;
         }
 
-        public override string ToString() // The program adds the new values to the overridden method string.
+        public override string ToString() // Utility overrides Droid's ToString() method and adds the new values to it.
         {
-            return "Has Toolbox            " + options[0] + Environment.NewLine + 
-                   "Connect to Computer    " + options[1] + Environment.NewLine +
-                   "Has Arm                " + options[2] + Environment.NewLine + base.ToString();
+            //totalCost = this.CalculateTotalCost();
+            return "          Has Toolbox  " + options[0] + Environment.NewLine +
+                   "  Connect to Computer  " + options[1] + Environment.NewLine +
+                   "              Has Arm  " + options[2] + Environment.NewLine + base.ToString();
         }
     }
 }

@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    interface IDroid // The IDroid interface
-    {
+    interface IDroid // The IDroid interface allows the abstract Droid class to implement it
+    {               // and override it's CalculateTotalCost() method
+
         decimal CalculateTotalCost();
 
-        decimal TotalCost
+        decimal TotalCost // This is the property for the total cost.
         {
             get;
             set;

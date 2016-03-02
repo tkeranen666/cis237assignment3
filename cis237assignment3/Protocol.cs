@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace cis237assignment3
 {
-    public class Protocol : Droid
+    public class Protocol : Droid // Protocal derives from Droid, inherits values, and overrides methods.
     {
         private int numberLanguages; // These variables are set to private because they do not need
         private const decimal costPerLanguage = 0.01m; // to be inherited by other classes.
@@ -25,16 +25,17 @@ namespace cis237assignment3
 
         public override decimal CalculateTotalCost()
         {
-            extraCost = costPerLanguage * numberLanguages;
-            return baseCost + costPerLanguage * numberLanguages + modelCost;
+            // extraCost is determined by multiplying the cost of each language by the number of languages.
+            extraCost = costPerLanguage * numberLanguages; 
+            return baseCost + extraCost + modelCost; // All the costs are added together to get the total cost.
         }
 
-        public override string ToString()
+        public override string ToString() // Protocal overrides Droid's ToString() method and adds the new values to it.
         {
-            totalCost = this.CalculateTotalCost();
+            totalCost = this.CalculateTotalCost(); // CalculateTotalCost() override methd is called to get the full cost.
             return "PROTOCAL" + Environment.NewLine + 
-                   "***************************************" + Environment.NewLine +
-                   "Languages              " + numberLanguages.ToString() + 
+                   "*******************************************" + Environment.NewLine +
+                   "            Languages  " + numberLanguages.ToString() + 
                    Environment.NewLine + base.ToString();
         }
     }

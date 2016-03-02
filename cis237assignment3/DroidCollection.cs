@@ -16,12 +16,12 @@ namespace cis237assignment3
 
         public void AddInitialDroids() // Add items to array so it can be printed
         {
-            droidList[0] = new Astromech("Carbon-steel Alloy", "R2 Unit", "Blue", true, true, true, true, 250);
+            droidList[0] = new Astromech("Thermasteel", "R2 Unit", "Blue", true, true, true, true, 250);
             droidList[1] = new Protocol("Plasteel", "Custom-built Unit", "Gold", 6000000);
-            droidList[2] = new Astromech("Aluminum-steel Alloy", "R2 Unit", "Green", true, true, true, false, 50);
-            droidList[3] = new Protocol("Carbon-steel Alloy", "HK Unit", "Rusty Orange", 400000);
+            droidList[2] = new Astromech("Thermasteel", "R2 Unit", "Green", true, true, true, false, 50);
+            droidList[3] = new Protocol("Plastoid Alloy", "HK Unit", "Rusty Orange", 400000);
             droidList[4] = new Astromech("Plasteel", "T3 Unit", "Silver", false, true, true, false, 50);
-            droidList[5] = new Janitor("Aluminum-steel Alloy", "V33 Unit", "Yellow", true, false, false, true, true);
+            droidList[5] = new Janitor("Plastoid Alloy", "V33 Unit", "Yellow", true, false, false, true, true);
         }
 
         public void PrintList() // PrintList() method prints the droids currently in the array
@@ -33,7 +33,7 @@ namespace cis237assignment3
                 {
 
                     Console.WriteLine();
-                    Console.Write("Droid #" + (counter + 1).ToString() + " -- ");
+                    Console.Write("            Droid #" + (counter + 1).ToString() + " -- ");
                     Console.WriteLine(droid.ToString());
                     Console.WriteLine();
                 }
