@@ -35,6 +35,7 @@ namespace cis237assignment3
 
         public override string ToString()
         {
+            totalCost = this.CalculateTotalCost();
             return base.ToString();
         }
     }

@@ -32,7 +32,8 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return "Ships Can Pilot: " + numberShips.ToString() + Environment.NewLine + base.ToString();
+            totalCost = this.CalculateTotalCost();
+            return "Ships Can Pilot:  " + numberShips.ToString() + Environment.NewLine + base.ToString();
         }
     }
 }

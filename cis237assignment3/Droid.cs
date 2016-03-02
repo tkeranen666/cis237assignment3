@@ -59,7 +59,7 @@ namespace cis237assignment3
             //this.baseCost = baseCost;
 
             baseCost = this.CalculateBaseCost();
-            totalCost = this.CalculateTotalCost();
+            //totalCost = this.CalculateTotalCost();
         }
 
         public string InfoList()
@@ -70,12 +70,12 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return "Material: " + this.material + Environment.NewLine +
-                   "Model: " + this.model + Environment.NewLine +
-                   "Color:  " + this.color + Environment.NewLine +
-                   "Material Cost: " + this.baseCost.ToString() + " Credits" + 
+            return "Material:         " + this.material + Environment.NewLine +
+                   "Model:            " + this.model + Environment.NewLine +
+                   "Color:            " + this.color + Environment.NewLine +
+                   "Material Cost:    " + this.baseCost.ToString() + " Credits" + 
                    Environment.NewLine +
-                   "Total Cost: " + this.totalCost.ToString() + " Credits";
+                   "Total Cost:       " + this.totalCost.ToString() + " Credits";
         }
 
         public decimal CalculateBaseCost()
